@@ -1,0 +1,33 @@
+{
+  "skill_name": "evaluate-generated-code",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have code another agent generated in this repo and a markdown rubric at .generated-code-eval/loop-eval.md. Evaluate the code against that spec, score every expectation from 0 to 100 with severity, respect the ignore rules, then generate and open an HTML report.",
+      "expected_output": "A results JSON file and an HTML report with per-expectation scoring, weighted overall grade, and evidence-backed findings.",
+      "files": [
+        "assets/eval-spec-template.md",
+        "references/eval-spec-format.md",
+        "references/results-json-format.md"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Please audit the generated TypeScript changes in this project against my spec file review/generated-agent-audit.md. The spec has expected file structure, exclusions for formatting noise, and a few exceptions. I need a browser-opened HTML scorecard, not just prose.",
+      "expected_output": "The skill reads the user rubric, inspects the relevant code, writes structured findings JSON, and renders an HTML report that opens locally.",
+      "files": [
+        "assets/eval-spec-template.md",
+        "references/eval-spec-format.md"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I want a rubric-based QA pass on code produced by a different agent. The markdown file docs/generated-code-rubric.md already lists expectations, code references, and ignore conditions. Run the evaluation from the project root and give me a weighted final grade in an HTML report.",
+      "expected_output": "A root-scoped generated-code evaluation that honors rubric metadata, produces one finding per expectation, computes a weighted overall grade, and writes an HTML report.",
+      "files": [
+        "references/eval-spec-format.md",
+        "references/results-json-format.md"
+      ]
+    }
+  ]
+}

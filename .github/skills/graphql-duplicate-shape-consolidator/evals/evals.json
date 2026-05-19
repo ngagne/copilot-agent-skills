@@ -1,0 +1,44 @@
+{
+  "skill_name": "graphql-duplicate-shape-consolidator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Using evals/files/object-duplicates.graphql, identify object types with exactly the same fields and types, consolidate safe duplicates automatically, and preserve client-facing compatibility by default. Show what you changed and what you skipped.",
+      "expected_output": "Finds exact duplicate object type shapes, performs only non-breaking consolidations, and reports changed and skipped groups with reasons.",
+      "files": [
+        "evals/files/object-duplicates.graphql"
+      ],
+      "expectations": [
+        "Output identifies at least one duplicate object-type group using exact field/type matching criteria.",
+        "Output explicitly states that non-breaking behavior is the default and that breaking merges require opt-in.",
+        "Output includes a per-group disposition (merged, implementation-only, or skipped) with rationale."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Using evals/files/input-duplicates.graphql, scan for duplicate input object types with identical fields and types, merge only safe duplicates, and avoid any breaking changes to public API contracts.",
+      "expected_output": "Detects duplicate input objects separately from object types, applies safe merges only, and explains skipped breaking-risk cases.",
+      "files": [
+        "evals/files/input-duplicates.graphql"
+      ],
+      "expectations": [
+        "Output treats input object types as a separate duplicate-detection category from object types.",
+        "Output avoids cross-kind merges (object to input or input to object).",
+        "Output flags any public-contract-breaking merge candidates as skipped pending explicit approval."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Using evals/files/non-exact-shapes.graphql, consolidate only exact duplicates and explain why near matches with directive/default-value differences were not merged.",
+      "expected_output": "Consolidates only strict exact-shape duplicates and rejects near matches where directives/defaults differ.",
+      "files": [
+        "evals/files/non-exact-shapes.graphql"
+      ],
+      "expectations": [
+        "Output requires exact-shape equality and does not merge near duplicates.",
+        "Output explains that directive/default-value mismatches are excluded from automatic consolidation by default.",
+        "Output provides clear skipped reasons for non-exact groups."
+      ]
+    }
+  ]
+}

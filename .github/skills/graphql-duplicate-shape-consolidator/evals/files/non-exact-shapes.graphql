@@ -1,0 +1,23 @@
+type Query {
+  account: Account!
+}
+
+type Account {
+  id: ID!
+  status: String!
+}
+
+type AccountView {
+  id: ID!
+  status: String! @deprecated(reason: "Use state instead")
+}
+
+input FilterInput {
+  limit: Int = 10
+  term: String
+}
+
+input SearchInput {
+  limit: Int = 20
+  term: String
+}

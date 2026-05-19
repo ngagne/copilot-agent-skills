@@ -1,0 +1,18 @@
+type Mutation {
+  createBook(input: CreateBookInput!): ID!
+}
+
+input CreateBookInput {
+  title: String!
+  pages: Int
+}
+
+input NewBookInput {
+  title: String!
+  pages: Int
+}
+
+input InternalCreateBookInput {
+  title: String!
+  pages: Int
+}

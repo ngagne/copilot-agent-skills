@@ -1,0 +1,46 @@
+JIRA: DEMO-123
+
+Request:
+Design an integration with a new downstream HTTP system defined by /openapi.yaml for an existing Node.js, TypeScript, Fastify, and GraphQL API.
+
+Constraints:
+- Do not edit or create files except those in /.agents/* during planning.
+
+Required integration parts:
+1) Service class encapsulating downstream HTTP calls mapped from OpenAPI operations, with proper error handling and resiliency.
+2) Transformation logic between downstream contract and domain model:
+   - date strings -> ISO datetime
+   - yes/no strings -> booleans (invalid -> null)
+   - numeric strings -> numbers (decimals supported)
+   - strong typing + defensive validation
+3) GraphQL schema/resolver updates:
+   - do not expose OpenAPI operations directly
+   - use internal Book IDs + a dedicated isbn field for matching
+   - return listings as a non-nullable property on Book
+   - include store object in listing
+   - clean error propagation
+4) Full Jest testing strategy:
+   - unit tests for transformations
+   - service tests with mocked HTTP
+   - resolver tests with mocked services
+   - no real downstream calls
+   - include snapshot tests and local contract fixtures (happy + malformed)
+
+Clarifications from user:
+- JIRA ID: DEMO-123
+- Add dedicated isbn on Book
+- listings on Book must be non-nullable
+- include store object in listing
+- ISO datetime conversion with strict parsing
+- yes/no invalid values map to null
+- price converted to float/number
+- strict non-null domain where possible; nullable booleans where invalid mapping possible
+- resiliency: timeout + retries only
+- 404 handling in resolver flow should yield null
+- standard downstream error taxonomy should be defined
+- resolver testing style should be unit/direct resolver invocation
+- snapshot coverage should include transforms and resolver/error shapes
+- retry policy defaults accepted: timeout=3s, maxRetries=2, exponential backoff+jitter, retry on network/5xx only
+- error code set accepted:
+  DOWNSTREAM_NOT_FOUND, DOWNSTREAM_TIMEOUT, DOWNSTREAM_UNAVAILABLE,
+  DOWNSTREAM_INVALID_PAYLOAD, DOWNSTREAM_UNEXPECTED

@@ -1,0 +1,1 @@
+Safe duplicate input objects found: `CreateBookInput`, `NewBookInput`, and `InternalCreateBookInput` are structurally identical. To avoid breaking public API contracts, I would keep the existing public names intact unless downstream usage is confirmed absent; no safe consolidation can be applied without a rename/removal risk.

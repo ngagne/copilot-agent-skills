@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "text": "Output identifies at least one duplicate object-type group using exact field/type matching criteria.",
+      "passed": true,
+      "evidence": "Mentions duplicate groups and exact matching criteria."
+    },
+    {
+      "text": "Output explicitly states that non-breaking behavior is the default and that breaking merges require opt-in.",
+      "passed": true,
+      "evidence": "States non-breaking default and requires explicit/opt-in for breaking migration."
+    },
+    {
+      "text": "Output includes a per-group disposition (merged, implementation-only, or skipped) with rationale.",
+      "passed": true,
+      "evidence": "Provides per-group action/disposition and accompanying reason."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "eval_feedback": {
+    "overall": "No suggestions, evals look solid."
+  }
+}

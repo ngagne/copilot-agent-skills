@@ -1,3 +1,5 @@
+import { createRequire } from 'module';
+
 import { DownstreamIntegrationError } from '../../../src/integrations/legacy-books/errors';
 import {
   transformListing,
@@ -8,10 +10,11 @@ import type {
   StoreResponse
 } from '../../../src/integrations/legacy-books/types';
 
-import validBookResponse from './fixtures/book-response.valid.json' assert { type: 'json' };
-import malformedBookResponse from './fixtures/book-response.malformed.json' assert { type: 'json' };
-import validStoreResponse from './fixtures/store-response.valid.json' assert { type: 'json' };
-import malformedStoreResponse from './fixtures/store-response.malformed.json' assert { type: 'json' };
+const require = createRequire(import.meta.url);
+const validBookResponse = require('./fixtures/book-response.valid.json');
+const malformedBookResponse = require('./fixtures/book-response.malformed.json');
+const validStoreResponse = require('./fixtures/store-response.valid.json');
+const malformedStoreResponse = require('./fixtures/store-response.malformed.json');
 
 const validListing = (validBookResponse as { listings: ListingResponse[] }).listings[0];
 const malformedListing = (malformedBookResponse as { listings: ListingResponse[] }).listings[0];

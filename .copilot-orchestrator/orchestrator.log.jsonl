@@ -1,0 +1,10 @@
+{"at":"2026-03-24T04:46:41.595Z","level":"info","message":"Starting polling cycle","repo":"ngagne/copilot-agent-skills"}
+{"at":"2026-03-24T04:46:41.600Z","level":"warn","message":"Skipping GitHub collector because it is not configured"}
+{"at":"2026-03-24T04:46:41.600Z","level":"warn","message":"Skipping Jenkins collector because it is not configured"}
+{"at":"2026-03-24T04:46:41.602Z","level":"info","message":"Completed polling cycle","repo":"ngagne/copilot-agent-skills","summary":"project-plans:0, github:0, jenkins:0"}
+{"at":"2026-03-24T04:46:41.602Z","level":"info","message":"Sleeping before next cycle","intervalMs":120000}
+{"at":"2026-03-24T04:48:41.603Z","level":"info","message":"Starting polling cycle","repo":"ngagne/copilot-agent-skills"}
+{"at":"2026-03-24T04:48:41.605Z","level":"warn","message":"Skipping GitHub collector because it is not configured"}
+{"at":"2026-03-24T04:48:41.606Z","level":"warn","message":"Skipping Jenkins collector because it is not configured"}
+{"at":"2026-03-24T04:48:41.607Z","level":"info","message":"Completed polling cycle","repo":"ngagne/copilot-agent-skills","summary":"project-plans:0, github:0, jenkins:0"}
+{"at":"2026-03-24T04:48:41.607Z","level":"info","message":"Sleeping before next cycle","intervalMs":120000}

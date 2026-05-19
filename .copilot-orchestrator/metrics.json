@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-03-24T04:48:41.607Z",
+  "metrics": {
+    "cyclesStarted": 2,
+    "cyclesCompleted": 2,
+    "cyclesFailed": 0,
+    "collectorRuns": {
+      "project-plans": 2,
+      "github": 2,
+      "jenkins": 2
+    },
+    "collectorErrors": {},
+    "eventsSeen": 0,
+    "eventsCompleted": 0,
+    "eventsFailed": 0,
+    "eventsIgnored": 0,
+    "eventsDeduped": 0,
+    "retriesAttempted": 0,
+    "retryExhausted": 0,
+    "githubRequests": 0,
+    "githubRateLimitHits": 0,
+    "jenkinsRequests": 0,
+    "commandRuns": 0,
+    "commandFailures": 0
+  }
+}

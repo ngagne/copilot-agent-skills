@@ -1,0 +1,26 @@
+type Query {
+  publicAuthor: AuthorPublic!
+  internalReport: ReportSummary!
+}
+
+type AuthorPublic {
+  id: ID!
+  name: String!
+  bio: String
+}
+
+type WriterPublic {
+  id: ID!
+  name: String!
+  bio: String
+}
+
+type ReportSummary {
+  code: String!
+  total: Int!
+}
+
+type ReportSnapshot {
+  code: String!
+  total: Int!
+}

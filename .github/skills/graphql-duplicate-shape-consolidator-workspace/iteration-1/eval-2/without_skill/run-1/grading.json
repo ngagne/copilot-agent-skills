@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "text": "Output treats input object types as a separate duplicate-detection category from object types.",
+      "passed": true,
+      "evidence": "Focuses duplicate detection on input object types."
+    },
+    {
+      "text": "Output avoids cross-kind merges (object to input or input to object).",
+      "passed": false,
+      "evidence": "Not clearly evidenced in output: Output avoids cross-kind merges (object to input or input to object)."
+    },
+    {
+      "text": "Output flags any public-contract-breaking merge candidates as skipped pending explicit approval.",
+      "passed": true,
+      "evidence": "Marks duplicates as skipped due to breaking/public API risk."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 1,
+    "total": 3,
+    "pass_rate": 0.67
+  },
+  "eval_feedback": {
+    "overall": "No suggestions, evals look solid."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "eval_id": 3,
+  "eval_name": "non-exact-shape-rejection",
+  "prompt": "Using evals/files/non-exact-shapes.graphql, consolidate only exact duplicates and explain why near matches with directive/default-value differences were not merged.",
+  "expectations": [
+    "Output requires exact-shape equality and does not merge near duplicates.",
+    "Output explains that directive/default-value mismatches are excluded from automatic consolidation by default.",
+    "Output provides clear skipped reasons for non-exact groups."
+  ]
+}

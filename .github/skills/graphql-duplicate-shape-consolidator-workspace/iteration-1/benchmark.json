@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "skill_name": "graphql-duplicate-shape-consolidator",
+    "skill_path": "/Users/nickgagne/Development/digital-seed/.github/skills/graphql-duplicate-shape-consolidator",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-05-17T15:50:20Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Output identifies at least one duplicate object-type group using exact field/type matching criteria.",
+          "passed": true,
+          "evidence": "Mentions duplicate groups and exact matching criteria."
+        },
+        {
+          "text": "Output explicitly states that non-breaking behavior is the default and that breaking merges require opt-in.",
+          "passed": true,
+          "evidence": "States non-breaking default and requires explicit/opt-in for breaking migration."
+        },
+        {
+          "text": "Output includes a per-group disposition (merged, implementation-only, or skipped) with rationale.",
+          "passed": true,
+          "evidence": "Provides per-group action/disposition and accompanying reason."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.67,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Output treats input object types as a separate duplicate-detection category from object types.",
+          "passed": true,
+          "evidence": "Focuses duplicate detection on input object types."
+        },
+        {
+          "text": "Output avoids cross-kind merges (object to input or input to object).",
+          "passed": false,
+          "evidence": "Not clearly evidenced in output: Output avoids cross-kind merges (object to input or input to object)."
+        },
+        {
+          "text": "Output flags any public-contract-breaking merge candidates as skipped pending explicit approval.",
+          "passed": true,
+          "evidence": "Marks duplicates as skipped due to breaking/public API risk."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Output requires exact-shape equality and does not merge near duplicates.",
+          "passed": true,
+          "evidence": "Requires exact matching and reports no consolidation for near matches."
+        },
+        {
+          "text": "Output explains that directive/default-value mismatches are excluded from automatic consolidation by default.",
+          "passed": true,
+          "evidence": "Explains directive and default-value mismatches as exclusion reasons."
+        },
+        {
+          "text": "Output provides clear skipped reasons for non-exact groups.",
+          "passed": true,
+          "evidence": "Gives concrete reasons the near matches were skipped."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.33,
+        "passed": 1,
+        "failed": 2,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Output identifies at least one duplicate object-type group using exact field/type matching criteria.",
+          "passed": true,
+          "evidence": "Mentions duplicate groups and exact matching criteria."
+        },
+        {
+          "text": "Output explicitly states that non-breaking behavior is the default and that breaking merges require opt-in.",
+          "passed": false,
+          "evidence": "Not clearly evidenced in output: Output explicitly states that non-breaking behavior is the default and that breaking merges require opt-in."
+        },
+        {
+          "text": "Output includes a per-group disposition (merged, implementation-only, or skipped) with rationale.",
+          "passed": false,
+          "evidence": "Not clearly evidenced in output: Output includes a per-group disposition (merged, implementation-only, or skipped) with rationale."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.67,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Output treats input object types as a separate duplicate-detection category from object types.",
+          "passed": true,
+          "evidence": "Focuses duplicate detection on input object types."
+        },
+        {
+          "text": "Output avoids cross-kind merges (object to input or input to object).",
+          "passed": false,
+          "evidence": "Not clearly evidenced in output: Output avoids cross-kind merges (object to input or input to object)."
+        },
+        {
+          "text": "Output flags any public-contract-breaking merge candidates as skipped pending explicit approval.",
+          "passed": true,
+          "evidence": "Marks duplicates as skipped due to breaking/public API risk."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.67,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Output requires exact-shape equality and does not merge near duplicates.",
+          "passed": false,
+          "evidence": "Not clearly evidenced in output: Output requires exact-shape equality and does not merge near duplicates."
+        },
+        {
+          "text": "Output explains that directive/default-value mismatches are excluded from automatic consolidation by default.",
+          "passed": true,
+          "evidence": "Explains directive and default-value mismatches as exclusion reasons."
+        },
+        {
+          "text": "Output provides clear skipped reasons for non-exact groups.",
+          "passed": true,
+          "evidence": "Gives concrete reasons the near matches were skipped."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.89,
+        "stddev": 0.1905,
+        "min": 0.67,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.5567,
+        "stddev": 0.1963,
+        "min": 0.33,
+        "max": 0.67
+      },
+      "time_seconds": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.33",
+      "time_seconds": "+0.0",
+      "tokens": "+0"
+    }
+  },
+  "notes": [
+    "The with_skill configuration outperformed without_skill by 0.33 pass rate on average (0.89 vs 0.5567).",
+    "Across both configurations, eval 2 was the recurring weakness: the output did not clearly evidence avoidance of cross-kind merges between object and input types.",
+    "With the skill, eval 1 and eval 3 met all three expectations, including exact-shape matching, non-breaking-by-default behavior, and clear per-group dispositions.",
+    "Without the skill, eval 1 missed the non-breaking-default and per-group-disposition expectations, and eval 3 missed the exact-shape-equality expectation."
+  ]
+}

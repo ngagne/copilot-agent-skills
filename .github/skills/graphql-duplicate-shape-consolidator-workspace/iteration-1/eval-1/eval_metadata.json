@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "eval_name": "object-duplicate-safe-vs-breaking",
+  "prompt": "Using evals/files/object-duplicates.graphql, identify object types with exactly the same fields and types, consolidate safe duplicates automatically, and preserve client-facing compatibility by default. Show what you changed and what you skipped.",
+  "expectations": [
+    "Output identifies at least one duplicate object-type group using exact field/type matching criteria.",
+    "Output explicitly states that non-breaking behavior is the default and that breaking merges require opt-in.",
+    "Output includes a per-group disposition (merged, implementation-only, or skipped) with rationale."
+  ]
+}

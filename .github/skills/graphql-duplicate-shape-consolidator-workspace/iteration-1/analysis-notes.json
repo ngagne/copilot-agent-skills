@@ -1,0 +1,6 @@
+[
+  "The with_skill configuration outperformed without_skill by 0.33 pass rate on average (0.89 vs 0.5567).",
+  "Across both configurations, eval 2 was the recurring weakness: the output did not clearly evidence avoidance of cross-kind merges between object and input types.",
+  "With the skill, eval 1 and eval 3 met all three expectations, including exact-shape matching, non-breaking-by-default behavior, and clear per-group dispositions.",
+  "Without the skill, eval 1 missed the non-breaking-default and per-group-disposition expectations, and eval 3 missed the exact-shape-equality expectation."
+]

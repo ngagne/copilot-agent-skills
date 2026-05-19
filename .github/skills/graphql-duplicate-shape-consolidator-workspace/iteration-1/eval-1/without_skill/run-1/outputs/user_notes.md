@@ -1,0 +1,2 @@
+- Assumed the baseline eval should preserve the schema unchanged unless a consolidation is compatibility-safe.
+- Interpreted "show what you changed and what you skipped" as a response summary, not a code modification requirement.

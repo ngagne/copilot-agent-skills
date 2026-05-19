@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "input-duplicate-separate-grouping",
+  "prompt": "Using evals/files/input-duplicates.graphql, scan for duplicate input object types with identical fields and types, merge only safe duplicates, and avoid any breaking changes to public API contracts.",
+  "expectations": [
+    "Output treats input object types as a separate duplicate-detection category from object types.",
+    "Output avoids cross-kind merges (object to input or input to object).",
+    "Output flags any public-contract-breaking merge candidates as skipped pending explicit approval."
+  ]
+}

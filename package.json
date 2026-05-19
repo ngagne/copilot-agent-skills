@@ -12,8 +12,8 @@
     "start": "npm run build && node dist/server.js",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch"
   },
   "author": "",
   "license": "ISC",
